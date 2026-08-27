@@ -4,3 +4,7 @@ canvas.height = 900;
 const ctx = canvas.getContext('2d');
 const imgData = ctx.createImageData(1600,900);
 const buffer = imgData.data;
+for(let index = 0; index < 1600 * 900; index++)
+{
+  
+}
