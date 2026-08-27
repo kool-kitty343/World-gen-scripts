@@ -4,10 +4,11 @@ canvas.height = 900;
 const ctx = canvas.getContext('2d');
 const imgData = ctx.createImageData(1600,900);
 const buffer = imgData.data;
-let heightMap = document.Noise
+let heightMap = document.Noise;
 for(let index = 0; index < 1600 * 900; index++)
 {
   let latitude = Math.floor(index / 1600);
+  let pixel = index * 4;
   if(heightMap[index] > 170) // snowy peaks
   {
     
@@ -22,6 +23,8 @@ for(let index = 0; index < 1600 * 900; index++)
   }
   else if(110 >= heightMap[index]) // ocean
   {
-    
+    buffer[pixel + 1] = Math.round((heightMap[index] + 20) / 20);
+    buffer[pixel + 2] = 255;
   }
 }
+const Map = canvas.toDataURL('image/png');
