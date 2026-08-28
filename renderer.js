@@ -28,6 +28,7 @@ for(let index = 0; index < 1600 * 900; index++)
     buffer[pixel + 2] = 255;
   }
 }
+ctx.putImageData(imgData, 0, 0);
 const map = new Image();
 const sprite = vm.runtime.getEditingTarget();
 map.onload = () => {
