@@ -24,7 +24,20 @@ for(let index = 0; index < 1600 * 900; index++)
   }
   else if(140 >= heightMap[index] && heightMap[index] > 110) // plains
   {
-    
+    let fertility = document.Fertile[(index * 4) + 2];
+    let trees = document.Trees[(index * 4) + 1];
+    if(trees > 10)
+    {
+      buffer[pixel + 1] = Math.max(200 - trees, 100);
+    }
+    else if(fertility > 10)
+    {
+      buffer[pixel + 1] = Math.min(200 + fertility, 255);
+    }
+    else
+    {
+      buffer[pixel + 1] = 200;
+    }
   }
   else if(110 >= heightMap[index]) // ocean
   {
