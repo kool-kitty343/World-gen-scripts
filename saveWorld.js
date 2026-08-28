@@ -1,3 +1,4 @@
 const fs = require('fs');
 const saveName = SAVENAME;
-fs.writeFile(saveName + '/noise.txt', "document.Noise");
+fs.mkdirSync('saves/' + saveName, {recursive:true})
+fs.writeFile('saves/' + saveName + '/noise.txt', "document.Noise");
