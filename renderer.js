@@ -12,7 +12,9 @@ for(let index = 0; index < 1600 * 900; index++)
   buffer[pixel + 3] = 255; // set alpha to max (no transparency)
   if(heightMap[index] > 170) // snowy peaks
   {
-    
+    buffer[pixel] = 245;
+    buffer[pixel + 1] = 245;
+    buffer[pixel + 2] = 245;
   }
   else if(170 >= heightMap[index] && heightMap[index] > 140) // rocky hills
   {
