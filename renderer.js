@@ -27,4 +27,5 @@ for(let index = 0; index < 1600 * 900; index++)
     buffer[pixel + 2] = 255;
   }
 }
-const Map = canvas.toDataURL('image/png');
+const map = new Image();
+map.src = canvas.toDataURL('image/png');
