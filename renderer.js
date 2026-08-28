@@ -30,7 +30,6 @@ for(let index = 0; index < 1600 * 900; index++)
 }
 const map = new Image();
 const sprite = vm.runtime.getEditingTarget();
-map.src = canvas.toDataURL('image/png');
 map.onload = () => {
   if(sprite.map)
   {
@@ -40,6 +39,7 @@ map.onload = () => {
   {
     sprite.map = vm.runtime.renderer.createResizableSkin(map);
   }
-  sprite.drawableSkinId = sprite.map;
+  vm.runtime.renderer.setDrawableSkinId(,sprite.drawableID, sprite.map);
   vm.runtime.requestRedraw();
 }
+map.src = canvas.toDataURL('image/png');
