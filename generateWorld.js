@@ -92,7 +92,6 @@ const NOISE = document.Noise;
 }
 // trees
 {
-	buffer = ;
 	let amount = [];
 	for(let i = 111; i <= 140; i++)
 	{
@@ -116,7 +115,6 @@ const NOISE = document.Noise;
 }
 // salt
 {
-	buffer = ;
 	for(let index = 0; index < 1600 * 900; index++)
 	{
 		let amount = 0;
