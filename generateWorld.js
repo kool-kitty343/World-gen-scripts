@@ -74,7 +74,7 @@ const NOISE = document.Noise;
 	let amount = [];
 	for(let i = 111; i <= 140; i++)
 	{
-		amount.push(Math.max(0, Math.round((140 - NOISE[i]) * 8)));
+		amount.push(Math.max(0, Math.round((140 - i) * 8)));
 	}
 	for(let index = 0; index < 1600 * 900; index++)
 	{
