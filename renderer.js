@@ -29,4 +29,17 @@ for(let index = 0; index < 1600 * 900; index++)
   }
 }
 const map = new Image();
+const sprite = vm.runtime.getEditingTarget();
 map.src = canvas.toDataURL('image/png');
+map.onload = () => {
+  if(sprite.map)
+  {
+    vm.runtime.renderer.updateResizableSkin(sprite.map, map);
+  }
+  else
+  {
+    sprite.map = vm.runtime.renderer.createResizableSkin(map);
+  }
+  sprite.drawableSkinId = sprite.map;
+  vm.runtime.requestRedraw();
+}
