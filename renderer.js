@@ -9,6 +9,7 @@ for(let index = 0; index < 1600 * 900; index++)
 {
   let latitude = Math.floor(index / 1600);
   let pixel = index * 4;
+  buffer[pixel + 3] = 255; // set apha to max (no transparency)
   if(heightMap[index] > 170) // snowy peaks
   {
     
