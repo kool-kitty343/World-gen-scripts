@@ -16,13 +16,13 @@ for(let index = 0; index < 1600 * 900; index++)
     buffer[pixel + 1] = 245;
     buffer[pixel + 2] = 245;
   }
-  else if(170 >= heightMap[index] && heightMap[index] > 140) // rocky hills
+  else if(170 >= heightMap[index] && heightMap[index] > 145) // rocky hills
   {
     buffer[pixel] = heightMap[index];
     buffer[pixel + 1] = heightMap[index];
     buffer[pixel + 2] = heightMap[index];
   }
-  else if(140 >= heightMap[index] && heightMap[index] > 110) // plains
+  else if(145 >= heightMap[index] && heightMap[index] > 110) // plains
   {
     let fertility = document.Fertile[(index * 4) + 2];
     let trees = document.Trees[(index * 4) + 1];
