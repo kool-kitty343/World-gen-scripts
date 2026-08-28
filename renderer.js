@@ -38,7 +38,7 @@ for(let index = 0; index < 1600 * 900; index++)
     }
     else
     {
-      buffer[pixel + 1] = 200;
+      buffer[pixel + 1] = 175;
     }
   }
   else if(110 >= heightMap[index]) // ocean
