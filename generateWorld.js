@@ -50,7 +50,7 @@ const NOISE = document.Noise;
 }
 // fish
 {
-	buffer = imgData.data;
+	buffer = ;
 	for(let index = 0; index < 1600 * 900; index++)
 	{
 		let hex = '000000';
@@ -94,7 +94,7 @@ const NOISE = document.Noise;
 }
 // trees
 {
-	buffer = imgData.data;
+	buffer = ;
 	let amount = [];
 	for(let i = 111; i <= 140; i++)
 	{
@@ -118,7 +118,7 @@ const NOISE = document.Noise;
 }
 // salt
 {
-	buffer = imgData.data;
+	buffer = ;
 	for(let index = 0; index < 1600 * 900; index++)
 	{
 		let amount = 0;
