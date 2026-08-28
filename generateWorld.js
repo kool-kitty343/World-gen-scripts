@@ -50,7 +50,6 @@ const NOISE = document.Noise;
 }
 // fish
 {
-	buffer = ;
 	for(let index = 0; index < 1600 * 900; index++)
 	{
 		let hex = '000000';
@@ -72,7 +71,6 @@ const NOISE = document.Noise;
 }
 // fertile land
 {
-	buffer = imgData.data;
 	let amount = [];
 	for(let i = 111; i <= 140; i++)
 	{
