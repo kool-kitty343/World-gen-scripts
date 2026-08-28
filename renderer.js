@@ -33,11 +33,11 @@ const sprite = vm.runtime.getEditingTarget();
 map.onload = () => {
   if(sprite.map)
   {
-    vm.runtime.renderer.updateResizableSkin(sprite.map, map);
+    vm.runtime.renderer.updateBitmapSkin(sprite.map, map);
   }
   else
   {
-    sprite.map = vm.runtime.renderer.createResizableSkin(map);
+    sprite.map = vm.runtime.renderer.createBitmapSkin(map);
   }
   vm.runtime.renderer.setDrawableSkinId(sprite.drawableID, sprite.map);
   vm.runtime.requestRedraw();
