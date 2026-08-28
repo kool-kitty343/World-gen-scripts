@@ -18,7 +18,9 @@ for(let index = 0; index < 1600 * 900; index++)
   }
   else if(170 >= heightMap[index] && heightMap[index] > 140) // rocky hills
   {
-    
+    buffer[pixel] = heightMap[index];
+    buffer[pixel + 1] = heightMap[index];
+    buffer[pixel + 2] = heightMap[index];
   }
   else if(140 >= heightMap[index] && heightMap[index] > 110) // plains
   {
