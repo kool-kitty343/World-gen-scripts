@@ -43,7 +43,7 @@ const NOISE = document.Noise;
 		buffer[pixel + 2] = parseInt(hex.substring(4,6),16);
 		buffer[pixel + 3] = 255;
 	}
-	document.NoiseDerivative = buffer;
+	document.NoiseDerivative = buffer.slice();
 	ctx.putImageData(imgData, 0, 0);
 	document.NoiseDerivativePNG = canvas.toDataURL('image/png');
 	
@@ -65,7 +65,7 @@ const NOISE = document.Noise;
 		buffer[pixel + 2] = parseInt(hex.substring(4,6),16) || 0;
 		buffer[pixel + 3] = ((hex == 0) ? 0 : 255);
 	}
-	document.Fish = buffer;
+	document.Fish = buffer.slice();
 	ctx.putImageData(imgData, 0, 0);
 	document.FishPNG = canvas.toDataURL('image/png');
 }
@@ -86,7 +86,7 @@ const NOISE = document.Noise;
 		buffer[pixel + 2] = maxFertility; // current fertility
 		buffer[pixel + 3] = ((maxFertility == 0) ? 0 : 255);
 	}
-	document.Fertile = buffer;
+	document.Fertile = buffer.slice();
 	ctx.putImageData(imgData, 0, 0);
 	document.FertilePNG = canvas.toDataURL('image/png');
 }
@@ -109,7 +109,7 @@ const NOISE = document.Noise;
 			buffer[pixel + 3] = 255;
 		}
 	}
-	document.Trees = buffer;
+	document.Trees = buffer.slice();
 	ctx.putImageData(imgData, 0, 0);
 	document.TreesPNG = canvas.toDataURL('image/png');
 }
@@ -129,7 +129,7 @@ const NOISE = document.Noise;
 		buffer[pixel + 2] = amount & 0xFF;
 		buffer[pixel + 3] = ((amount + quality == 0) ? 0 : 255);
 	}
-	document.Salt = buffer;
+	document.Salt = buffer.slice();
 	ctx.putImageData(imgData, 0, 0);
 	document.SaltPNG = canvas.toDataURL('image/png');
 }
