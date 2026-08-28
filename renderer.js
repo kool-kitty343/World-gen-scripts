@@ -32,7 +32,9 @@ for(let index = 0; index < 1600 * 900; index++)
     }
     else if(fertility > 10)
     {
-      buffer[pixel + 1] = Math.min(200 + fertility, 255);
+      buffer[pixel] = fertility / 2;
+      buffer[pixel + 1] = Math.min(200 + (fertility / 4), 255);
+      buffer[pixel + 2] = fertility / 2;
     }
     else
     {
