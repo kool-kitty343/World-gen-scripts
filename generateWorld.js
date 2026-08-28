@@ -114,24 +114,24 @@ const NOISE = document.Noise;
 	document.TreesPNG = canvas.toDataURL('image/png');
 }
 // salt
-{/*
+{
 	for(let index = 0; index < 1600 * 900; index++)
 	{
 		let amount = 0;
 		let quality = 0;
-		if(NOISE[index] > 110 && NOISE[index] <= 140)
+		if(NOISE[index] > 140 && NOISE[index] <= 145)
 		{
-			amount = Math.max(0, Math.round((120 - NOISE[index]) * 10));
+			amount = Math.max(0, Math.round(60000 - (NOISE[index] - 143) ** 10));
 		}
 		const pixel = index * 4;
 		buffer[pixel] = quality;
-		buffer[pixel + 1] = amount;
-		buffer[pixel + 2] = 00; //age?  size?  pollution absorbed?
+		buffer[pixel + 1] = (amount >> 8) & 0xFF;
+		buffer[pixel + 2] = amount & 0xFF;
 		buffer[pixel + 3] = ((amount + quality == 0) ? 0 : 255);
 	}
 	document.Salt = buffer;
 	ctx.putImageData(imgData, 0, 0);
-	document.SaltPNG = canvas.toDataURL('image/png');*/
+	document.SaltPNG = canvas.toDataURL('image/png');
 }
 
 // wind
