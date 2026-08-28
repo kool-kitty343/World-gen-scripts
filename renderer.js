@@ -24,7 +24,7 @@ for(let index = 0; index < 1600 * 900; index++)
   }
   else if(110 >= heightMap[index]) // ocean
   {
-    buffer[pixel + 1] = Math.round((heightMap[index] + 20) / 20);
+    buffer[pixel + 1] = Math.round(heightMap[index] / 20) + 1;
     buffer[pixel + 2] = 255;
   }
 }
@@ -41,7 +41,6 @@ map.onload = () => {
     sprite.map = vm.runtime.renderer.createBitmapSkin(map);
   }
   vm.runtime.renderer.updateDrawableProperties(sprite.drawableID,{skinId : sprite.map})
-  //sprite.drawableSkinId = sprite.map;
   vm.runtime.requestRedraw();
 }
 map.src = canvas.toDataURL('image/png');
