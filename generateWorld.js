@@ -119,9 +119,9 @@ const NOISE = document.Noise;
 	{
 		let amount = 0;
 		let quality = 0;
-		if(NOISE[index] > 140 && NOISE[index] <= 145)
+		if(NOISE[index] == 145)
 		{
-			amount = Math.max(0, Math.round(60000 - (NOISE[index] - 143) ** 10));
+			amount = (60000);
 		}
 		const pixel = index * 4;
 		buffer[pixel] = quality;
