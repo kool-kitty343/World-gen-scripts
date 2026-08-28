@@ -28,12 +28,12 @@ for(let index = 0; index < 1600 * 900; index++)
     let trees = document.Trees[(index * 4) + 1];
     if(trees > 10)
     {
-      buffer[pixel + 1] = Math.max(200 - trees, 100);
+      buffer[pixel + 1] = Math.max(175 - trees, 100);
     }
     else if(fertility > 10 && trees <= 10)
     {
       buffer[pixel] = fertility / 2;
-      buffer[pixel + 1] = Math.min(200 + (fertility / 4), 255);
+      buffer[pixel + 1] = Math.min(175 + (fertility / 4), 255);
       buffer[pixel + 2] = fertility / 2;
     }
     else
