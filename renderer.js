@@ -24,7 +24,7 @@ for(let index = 0; index < 1600 * 900; index++)
   }
   else if(110 >= heightMap[index]) // ocean
   {
-    buffer[pixel + 1] = heightMap[index];
+    buffer[pixel + 1] = Math.round(heightMap[index] / 2);
     buffer[pixel + 2] = 255;
   }
 }
