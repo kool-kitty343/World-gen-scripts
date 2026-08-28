@@ -39,7 +39,7 @@ map.onload = () => {
   {
     sprite.map = vm.runtime.renderer.createBitmapSkin(map);
   }
-  sprite.setDrawableSkinId = sprite.map;
+  sprite.drawableSkinId = sprite.map;
   vm.runtime.requestRedraw();
 }
 map.src = canvas.toDataURL('image/png');
