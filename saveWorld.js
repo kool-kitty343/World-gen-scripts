@@ -7,7 +7,7 @@ async function saveRaw(map)
 }
 async function savePNG(map)
 {
-    await fs.writeFile(`saves/${saveName}/${map}.PNG`, document[`${map}PNG`]);
+    await fs.writeFile(`saves/${saveName}/${map}.png`, document[`${map}PNG`]);
 }
 await save("Noise");
 for(const map of document.mapList)
