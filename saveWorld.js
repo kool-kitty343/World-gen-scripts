@@ -1,13 +1,12 @@
 const fs = require('node:fs/promises');
 const saveName = SAVENAME;
+await fs.mkdir('saves/' + saveName, {recursive:true});
 async function saveRaw(map)
 {
-    await fs.mkdir('saves/' + saveName, {recursive:true});
     await fs.writeFile(`saves/${saveName}/${map}.txt`, document[map]);
 }
 async function savePNG(map)
 {
-    await fs.mkdir('saves/' + saveName, {recursive:true});
     await fs.writeFile(`saves/${saveName}/${map}.PNG`, document[`${map}PNG`]);
 }
 await save("Noise");
