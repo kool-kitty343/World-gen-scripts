@@ -4,15 +4,15 @@ const saveName = SAVENAME;
 await fs.mkdir('saves/' + saveName, {recursive:true});
 async function saveRaw(map)
 {
-    await fs.writeFile(`saves/${saveName}/${map}.txt`, maps);
+    await fs.writeFile(`saves/${saveName}/${map}.txt`, document[map]);
 }
 async function savePNG(map)
 {
     await fs.writeFile(`saves/${saveName}/${map}.png`, document[`${map}PNG`]);
 }
 await saveRaw("Noise");
-for(let map = 0; map < maps.length; map++)
+for(const map of maps)
 {
-    await saveRaw(maps[map]);
-    await savePNG(maps[map]);
+    await saveRaw(map);
+    await savePNG(map);
 }
