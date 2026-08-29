@@ -11,8 +11,8 @@ async function savePNG(map)
     await fs.writeFile(`saves/${saveName}/${map}.png`, document[`${map}PNG`]);
 }
 await saveRaw("Noise");
-for(const map of maps)
+for(let map = 0; map < maps.length; map++)
 {
-    await saveRaw(map);
-    await savePNG(map);
+    await saveRaw(maps[map]);
+    await savePNG(maps[map]);
 }
