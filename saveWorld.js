@@ -1,4 +1,8 @@
-const fs = require('fs');
+const fs = require('node:fs/promises');
 //const saveName = SAVENAME;
-//fs.mkdirSync('saves/' + saveName, {recursive:true});
-await fs.writeFile('saves/' + 'saveName' + '/noise.txt', "document.Noise");
+async function save()
+{
+    await fs.mkdir('saves/' + saveName, {recursive:true});
+    await fs.writeFile('saves/' + 'saveName' + '/noise.txt', "document.Noise");
+}
+save();
