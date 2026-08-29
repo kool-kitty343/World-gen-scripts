@@ -14,4 +14,5 @@ await save("Noise");
 for(const map of document.mapList)
 {
     await saveRaw(map);
+    await savePNG(map);
 }
