@@ -1,7 +1,7 @@
 const fs = require('node:fs/promises');
 const maps = document.mapList;
 const saveName = SAVENAME;
-//await fs.mkdir('saves/' + saveName, {recursive:true});
+await fs.mkdir('saves/' + saveName, {recursive:true});
 async function saveRaw(map)
 {
     await fs.writeFile(`saves/${saveName}/${map}.txt`, document[map]);
