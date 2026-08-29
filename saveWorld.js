@@ -4,7 +4,7 @@ const saveName = SAVENAME;
 await fs.mkdir('saves/' + saveName, {recursive:true});
 async function saveRaw(map)
 {
-    await fs.writeFile(`saves/${saveName}/${map}.txt`, document[map]);
+    await fs.writeFile(`saves/${saveName}/${map}.txt`, maps);
 }
 async function savePNG(map)
 {
