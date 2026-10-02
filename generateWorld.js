@@ -1,12 +1,12 @@
 const canvas = document.createElement('canvas');
-canvas.width = 1600;
-canvas.height = 900;
+canvas.width = 800;
+canvas.height = 450;
 const ctx = canvas.getContext('2d');
-const imgData = ctx.createImageData(1600,900);
+const imgData = ctx.createImageData(800,450);
 const buffer = imgData.data;
 {
-	const noise = new Uint8Array(1600 * 900)
-	for(let index = 0; index < 1600 * 900; index++)
+	const noise = new Uint8Array(800 * 450)
+	for(let index = 0; index < 800 * 450; index++)
 	{
 		noise[index] = parseInt(NOISE_DATA[index].substring(1,3),16);
 	}
@@ -14,15 +14,15 @@ const buffer = imgData.data;
 }
 const NOISE = document.Noise;
 {
-	for(let index = 0; index < 1600 * 900; index++)
+	for(let index = 0; index < 800 * 450; index++)
 	{
-		const col = index % 1600;
-		const row = Math.floor(index / 1600);
+		const col = index % 800;
+		const row = Math.floor(index / 800);
 
-		const upIdx = Math.max(0, row - 1) * 1600 + col;
-		const downIdx = Math.min(899, row + 1) * 1600 + col;
-		const leftIdx = row * 1600 + Math.max(0, col - 1);
-		const rightIdx = row * 1600 + Math.min(1599, col + 1);
+		const upIdx = Math.max(0, row - 1) * 800 + col;
+		const downIdx = Math.min(899, row + 1) * 800 + col;
+		const leftIdx = row * 800 + Math.max(0, col - 1);
+		const rightIdx = row * 800 + Math.min(1599, col + 1);
 		
 		let up = NOISE[upIdx];
 		let down = NOISE[downIdx];
@@ -50,7 +50,7 @@ const NOISE = document.Noise;
 }
 // fish
 {
-	for(let index = 0; index < 1600 * 900; index++)
+	for(let index = 0; index < 800 * 450; index++)
 	{
 		let hex = '000000';
 		if(NOISE[index] < 110)
@@ -76,7 +76,7 @@ const NOISE = document.Noise;
 	{
 		amount.push(Math.max(0, Math.round((140 - i) * 8)));
 	}
-	for(let index = 0; index < 1600 * 900; index++)
+	for(let index = 0; index < 800 * 450; index++)
 	{
 		let elevation = NOISE[index];
 		let maxFertility = (elevation > 110 && elevation <= 140) ? amount[elevation - 111] : 0;
@@ -97,7 +97,7 @@ const NOISE = document.Noise;
 	{
 		amount.push(Math.max(0, Math.round((130 - i) * 10)));
 	}
-	for(let index = 0; index < 1600 * 900; index++)
+	for(let index = 0; index < 800 * 450; index++)
 	{
 		let elevation = NOISE[index];
 		const pixel = index * 4;
@@ -115,7 +115,7 @@ const NOISE = document.Noise;
 }
 // salt
 {
-	for(let index = 0; index < 1600 * 900; index++)
+	for(let index = 0; index < 800 * 450; index++)
 	{
 		let amount = 0;
 		let quality = 0;
