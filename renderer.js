@@ -1,13 +1,13 @@
 const canvas = document.createElement('canvas');
-canvas.width = 1600;
-canvas.height = 900;
+canvas.width = 800;
+canvas.height = 450;
 const ctx = canvas.getContext('2d');
-const imgData = ctx.createImageData(1600,900);
+const imgData = ctx.createImageData(800,450);
 const buffer = imgData.data;
 let heightMap = document.Noise;
-for(let index = 0; index < 1600 * 900; index++)
+for(let index = 0; index < 800 * 450; index++)
 {
-  let latitude = Math.floor(index / 1600);
+  let latitude = Math.floor(index / 800);
   let pixel = index * 4;
   buffer[pixel + 3] = 255; // set alpha to max (no transparency)
   if(heightMap[index] > 170) // snowy peaks
